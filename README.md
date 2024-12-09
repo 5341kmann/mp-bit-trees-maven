@@ -8,7 +8,6 @@ A mini-project exploring bit trees (a form of binary tree) and their use in tran
 * Samuel A. Rebelsky (starter code)
 
 **Acknowledgements**
-
 * Samuel Rebelsky's CSC 207 fall 2024 E-Boards
 * Oracle Java Documentation
 
@@ -17,7 +16,7 @@ A mini-project exploring bit trees (a form of binary tree) and their use in tran
 * _ASCII to braille: ba braille (string)_
 * _ASCII to unicode: ba unicode (String -use quotes to include spaces)_
 * _braille to ASCII: ba ascii (braille encoded as bits )_
-Note: that the braille encodings do not include special characters (ie. ".?!@$&-()"...)_
+_Note: that the braille encodings do not include special characters (ie. ".?!@$&-()"...)_
 
 ---
 

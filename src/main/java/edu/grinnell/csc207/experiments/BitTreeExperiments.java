@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 /**
  * Some experiments with Bit Trees.
  *
- * @author Your Name Here
+ * @author Grant Sackmann
  * @author Samuel A. Rebelsky
  */
 public class BitTreeExperiments {
@@ -21,14 +21,14 @@ public class BitTreeExperiments {
   /**
    * Some of the conversion from braille to ASCII.
    */
-  static final String b2a =
+  static final String B2A =
       """
-      100000,A
-      110000,B
-      100100,C
-      100110,D
-      100010,E
-      """;
+          100000,A
+          110000,B
+          100100,C
+          100110,D
+          100010,E
+          """;
 
   // +---------+-----------------------------------------------------
   // | Helpers |
@@ -37,12 +37,9 @@ public class BitTreeExperiments {
   /**
    * Attempt to get the value corresponding to a bit string.
    *
-   * @param pen
-   *   Used for logging.
-   * @param bt
-   *   The tree.
-   * @param bits
-   *   The key.
+   * @param pen  Used for logging.
+   * @param bt   The tree.
+   * @param bits The key.
    */
   static void get(PrintWriter pen, BitTree bt, String bits) {
     pen.printf("get(\"%s\")", bits);
@@ -58,14 +55,10 @@ public class BitTreeExperiments {
   /**
    * Attempt to set a bits/value pair in a tree.
    *
-   * @param pen
-   *   Used for logging.
-   * @param bt
-   *   The tree.
-   * @param bits
-   *   The key.
-   * @param value
-   *   The value.
+   * @param pen   Used for logging.
+   * @param bt    The tree.
+   * @param bits  The key.
+   * @param value The value.
    */
   static void set(PrintWriter pen, BitTree bt, String bits, String value) {
     pen.printf("set(\"%s\", \"%s\") ... ", bits, value);
@@ -81,8 +74,7 @@ public class BitTreeExperiments {
   /**
    * Print a separator.
    *
-   * @param pen
-   *   Where to print the separator.
+   * @param pen Where to print the separator.
    */
   static void separator(PrintWriter pen) {
     pen.println("-".repeat(72));
@@ -96,8 +88,7 @@ public class BitTreeExperiments {
   /**
    * Create a tree, look up a few things, and dump it.
    *
-   * @param pen
-   *   Where to print the info.
+   * @param pen Where to print the info.
    */
   static void experiment01(PrintWriter pen) {
     pen.println("Experiment 01");
@@ -134,14 +125,13 @@ public class BitTreeExperiments {
   /**
    * Load a tree, look up a few things, and dump it.
    *
-   * @param pen
-   *   Where to print the info.
+   * @param pen Where to print the info.
    */
   static void experiment02(PrintWriter pen) {
     pen.println("Experiment 02");
     pen.println("-------------");
     BitTree b2aTree = new BitTree(6);
-    InputStream b2aStream = new ByteArrayInputStream(b2a.getBytes());
+    InputStream b2aStream = new ByteArrayInputStream(B2A.getBytes());
     b2aTree.load(b2aStream);
     try {
       b2aStream.close();
@@ -166,15 +156,14 @@ public class BitTreeExperiments {
   /**
    * Run our experiments.
    *
-   * @param args
-   *   Command-line arguments (ignored).
+   * @param args Command-line arguments (ignored).
    */
   public static void main(String[] args) {
     PrintWriter pen = new PrintWriter(System.out, true);
 
     experiment01(pen);
     experiment02(pen);
-    
+
     pen.close();
   } // main(String[])
 
